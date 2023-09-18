@@ -1,4 +1,4 @@
-### AL ###
+### ChromeOS Gitignore ###
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
 .vscode/
@@ -20,3 +20,15 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+{
+# Chrome VM File
+
+vm0.chromevm
+
+# RAM File
+ram.vsf
+
+# vdisk File
+disk.vhdd
+}
