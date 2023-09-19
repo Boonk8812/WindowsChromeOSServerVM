@@ -1,0 +1,55 @@
+version("0.0.0");
+
+using System;
+using System.IO;
+
+namespace VirtualDiskCreator
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            // Create GUI and add "Add vDisk" button
+            // Handle button click event to call CreateVirtualDisk function
+        }
+
+        public static void CreateVirtualDisk()
+        {
+            try
+            {
+                // Prompt the user to enter the desired disk size
+                Console.WriteLine("Enter the size of the virtual hard disk (in GB):");
+                int diskSize = Convert.ToInt32(Console.ReadLine());
+
+                // Generate a unique file name for the virtual hard disk
+                string fileName = $"vDisk_{DateTime.Now.ToString("yyyyMMddHHmmss")}.vhd";
+
+                // Create the virtual hard disk file
+                using (FileStream fs = File.Create(fileName, diskSize * 1024 * 1024 * 1024))
+                {
+                    Console.WriteLine($"Virtual hard disk '{fileName}' created successfully!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while creating the virtual hard disk: {ex.Message}");
+            }
+        }
+    }
+}
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+}
